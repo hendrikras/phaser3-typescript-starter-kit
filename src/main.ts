@@ -1,5 +1,6 @@
 import * as Phaser from 'phaser';
 import Scenes from './scenes';
+import { PhaserNavMeshPlugin } from "phaser-navmesh";
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Sample',
@@ -18,6 +19,16 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     arcade: {
       debug: true,
     },
+  },
+
+  plugins: {
+    global: [
+      { key: "NavMeshPlugin", 
+        plugin: PhaserNavMeshPlugin, 
+        mapping: "navMeshPlugin", 
+        start: true 
+      },
+    ],
   },
 
   parent: 'game',
